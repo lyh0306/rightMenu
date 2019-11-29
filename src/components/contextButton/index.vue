@@ -3,6 +3,7 @@
     <div class="contextmenu__item" @click="handleOne()">菜单一</div>
     <div class="contextmenu__item" @click="handleTwo()">菜单二</div>
     <div class="contextmenu__item" @click="handleThree()">菜单三</div>
+    <div class="contextmenu__item" @click="handleThree()">菜单四</div>
   </div>
 </template>
 
