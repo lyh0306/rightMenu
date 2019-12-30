@@ -4,7 +4,13 @@
             :data="tableData"
             @row-contextmenu="rowContextmenu"
             border
+            @row-click = "handleSelectionChange"
             style="width: 100%">
+        <el-table-column label="选择" width="70" header-align="center" align="center">
+          <template slot-scope="scope">
+            <el-radio class="radio" v-model="radio" :label="scope.$index"></el-radio>
+          </template>
+        </el-table-column>
       <el-table-column
               prop="date"
               label="日期"
@@ -83,12 +89,18 @@
           address: '上海市普陀区金沙江路 1516 弄'
         }],
         menuVisible: false,
+        radio: '',
+        send_radio: '',
+        selectList: []
       }
     },
     components: {
       contextButton
     },
     methods: {
+      handleSelectionChange (val) {
+        this.radio = this.tableData.indexOf(val);
+      },
       rowContextmenu (row, column, event) {
         this.menuVisible = false
         this.menuVisible = true

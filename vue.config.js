@@ -5,6 +5,11 @@ function resolve (dir) {
     return path.join(__dirname, './', dir)
 }
 module.exports = {
+    devServer: {
+        host: '192.168.0.124',
+        port: 9099,
+        https: false,
+    },
     baseUrl: '/price',
     transpileDependencies: ['webpack-dev-server/client'],
     configureWebpack: {
