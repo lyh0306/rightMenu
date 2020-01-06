@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <el-button v-for="(item, index) in btnList" :key="item.index" @click="handle(index)" :class="{isActive : handleClick === index}">{{item.name}}</el-button>
-    <el-divider content-position="left">我们是不一样的</el-divider>
+    <el-divider content-position="left">demo</el-divider>
       <!--    // 右键菜单-->
     <rightMenu v-if="handleClick === 0" />
       <!--    点击切换-->
@@ -10,7 +10,10 @@
     <dhAnimate v-if="handleClick === 2"/>
       <!--视频-->
     <videoPlay v-if="handleClick === 3"/>
-
+      <!--canvas-->
+    <canvas-demo v-if="handleClick === 4"></canvas-demo>
+    <!-- 监听查询购物车数量及金额变化 -->
+    <shop v-if="handleClick === 5"></shop>
   </div>
 </template>
 
@@ -19,6 +22,8 @@ import rightMenu from './components/rightMenu.vue'
 import tabButton from './components/tabButton.vue'
 import dhAnimate from './components/dhAnimate.vue'
 import videoPlay from './components/videoPlay.vue'
+import canvasDemo from './components/canvas.vue'
+import shop from './components/shop.vue'
 
 export default {
   name: 'app',
@@ -29,6 +34,8 @@ export default {
         {name: '切换按钮'},
         {name: '动画'},
         {name: '视频'},
+        {name: 'canvas'},
+        {name: '监听查询购物车数量及金额变化'},
       ],
       handleClick: 0
     }
@@ -37,7 +44,9 @@ export default {
     rightMenu,
     tabButton,
     dhAnimate,
-    videoPlay
+    videoPlay,
+    canvasDemo,
+    shop
   },
   methods: {
     handle (index) {

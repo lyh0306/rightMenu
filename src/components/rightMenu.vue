@@ -26,7 +26,7 @@
               label="地址">
       </el-table-column>
     </el-table>
-    <context-button v-if="menuVisible" @foo="foo" ref="contextbutton" @handleOne="handleOne" @handleTwo="handleTwo" @handleThree="handleThree"></context-button>
+      <context-button v-if="menuVisible" @foo="foo" ref="contextbutton" @handleOne="handleOne" @handleTwo="handleTwo" @handleThree="handleThree"></context-button>
   </div>
 </template>
 
