@@ -14,6 +14,8 @@
     <canvas-demo v-if="handleClick === 4"></canvas-demo>
     <!-- 监听查询购物车数量及金额变化 -->
     <shop v-if="handleClick === 5"></shop>
+    <!-- 高德地图 -->
+    <gdmap v-if="handleClick === 6"></gdmap>
   </div>
 </template>
 
@@ -24,6 +26,7 @@ import dhAnimate from './components/dhAnimate.vue'
 import videoPlay from './components/videoPlay.vue'
 import canvasDemo from './components/canvas.vue'
 import shop from './components/shop.vue'
+import gdmap from './components/map/index.vue'
 
 export default {
   name: 'app',
@@ -36,6 +39,7 @@ export default {
         {name: '视频'},
         {name: 'canvas'},
         {name: '监听查询购物车数量及金额变化'},
+        {name: '高德地图'},
       ],
       handleClick: 0
     }
@@ -46,7 +50,8 @@ export default {
     dhAnimate,
     videoPlay,
     canvasDemo,
-    shop
+    shop,
+    gdmap
   },
   methods: {
     handle (index) {
